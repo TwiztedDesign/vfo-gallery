@@ -12,7 +12,8 @@ angular.module('galleryApp',[])
 
         $scope.settings = {
             rtl         : true,
-            toggleText  :"Show Gallery"
+            toggleText  :"Show Gallery",
+            horizontal  : false
         };
 
         $scope.data = [

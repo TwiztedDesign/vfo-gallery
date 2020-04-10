@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body ng-app="galleryApp" ng-controller="galleryAppController" ng-class="{right:settings.rtl}">
-<div class="gallery-toggle-off" ng-class="{darken:galleryVisibility}" ng-click="hideGallery()"></div>
-<div class="gallery-toggle-on" ng-click="showGallery()">{{settings.toggleText}}</div>
+<div class="gallery-toggle-off" ng-class="{darken:galleryVisibility}" ng-click="hideGallery()">
+    <i class="fa fa-times close" aria-hidden="true"></i>
+</div>
+<div class="gallery-toggle-on" ng-click="showGallery()" ng-class="{hide:galleryVisibility}">{{settings.toggleText}}</div>
 <div class="gallery" ng-class="{hide: !galleryVisibility}">
     <div class="gallery-tabs"></div>
     <div class="gallery-view">
