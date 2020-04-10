@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/vff-controllers/dist/vff-controller/vff-controller.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" onerror="fallback('../libs/fontawesome/css/font-awesome.min.css')">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://unpkg.com/vff@1"></script>
+    <script type="module" src="https://unpkg.com/vff-controllers/dist/vff-controller/vff-controller.esm.js"></script>
+    <script src="js/controller.js"></script>
+    <script nomodule="" src="https://unpkg.com/vff-controllers/dist/vff-controller/vff-controller.js"></script>
+</head>
+<body vff-controller ng-app="app" ng-controller="ctrl">
+<vff-tabs default="style">
+    <vff-tab for="items">Items</vff-tab>
+    <vff-tab for="style">Style</vff-tab>
+</vff-tabs>
+<div id="items" class="ctrl-container">
+    <div class="ctrl-container-row">
+        <table>
+            <thead>
+            <tr>
+                <th style="width: 100px">Image</th>
+                <th style="width: 100px">Title</th>
+                <th style="width: 100px">Sub Title</th>
+                <th>Description</th>
+                <th style="width: 100px">Action</th>
+                <th style="width: 100px">Link</th>
+                <th style="text-align:center; background:transparent; width:25px;"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="baseItem in baseItems track by $index">
+                <td>
+                    <input type="text" vff-data="baseItems[{{$index}}].img"  ng-model="baseItem.img"/>
+                </td>
+                <td>
+                    <input type="text" vff-data="baseItems[{{$index}}].title"  ng-model="baseItem.title"/>
+                </td>
+                <td>
+                    <input type="text" vff-data="baseItems[{{$index}}].subTitle"  ng-model="baseItem.subTitle"/>
+                </td>
+                <td>
+                    <input type="text" vff-data="baseItems[{{$index}}].desc"  ng-model="baseItem.desc"/>
+                </td>
+                <td>
+                    <input type="text" vff-data="baseItems[{{$index}}].action"  ng-model="baseItem.action"/>
+                </td>
+                <td>
+                    <input type="text" vff-data="baseItems[{{$index}}].actionLink"  ng-model="baseItem.actionLink"/>
+                </td>
+                <td style="text-align:center; background:transparent;">
+                    <a class="table-action delete-row" ng-click="removeBaseItem($index)"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ctrl-container-row">
+        <a class="table-action add-row" ng-click="addBaseItem()"><i class="fa fa-plus" aria-hidden="true"></i><span>Add Row</span></a>
+    </div>
+</div>
+<div id="style" class="ctrl-container">
+    <h2>General</h2>
+    <div class="ctrl-container-row indent">
+        <div class="ctrl-container-block">
+            <label>Background</label>
+            <input type="color" vff-style="galleryBackground" value="#eeeeee"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Padding</label>
+            <input type="range" min="0" max="50" step="1" value="10" vff-style="galleryPadding" vff-suffix="px"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Mobile Width</label>
+            <input type="range" min="0" max="80" step="1" value="50" vff-style="galleryMobileWidth" vff-suffix="%"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Desktop Width</label>
+            <input type="range" min="0" max="80" step="1" value="30" vff-style="galleryDesktopWidth" vff-suffix="%"/>
+        </div>
+    </div>
+    <h3>Toggle Button</h3>
+    <div class="ctrl-container-row indent">
+        <div class="ctrl-container-block">
+            <label>Background</label>
+            <input type="color" vff-style="galleryToggleBackground" value="#ffffff"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Background</label>
+            <input type="color" vff-style="galleryToggleTextColor" value="#000000"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Toggle Text</label>
+            <input type="text" vff-data="settings.toggleText" value="Show Gallery"/>
+        </div>
+    </div>
+    <h2>Gallery Item</h2>
+    <div class="ctrl-container-row indent">
+        <div class="ctrl-container-block">
+            <label>Background</label>
+            <input type="color" vff-style="galleryItemBackground" value="#ffffff"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Border Radius</label>
+            <input type="range" min="0" max="30" step="1" value="10" vff-style="galleryItemBorderRadius" vff-suffix="px"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Spacing</label>
+            <input type="range" min="5" max="50" step="1" value="10" vff-style="galleryItemSpacing" vff-suffix="px"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Shadow</label>
+            <input type="range" min="0" max="1" step="0.01" value="0.3" vff-style="galleryItemShadowOpacity"/>
+        </div>
+    </div>
+    <div class="ctrl-container-row indent">
+        <div class="ctrl-container-block">
+            <label>Title Background</label>
+            <input type="color" vff-style="galleryItemTitleBackground" value="#ffffff"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Title Color</label>
+            <input type="color" vff-style="galleryItemTitleTextColor" value="#0000"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Sub Title Color</label>
+            <input type="color" vff-style="galleryItemSubtitleTextColor" value="#0000"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Description Color</label>
+            <input type="color" vff-style="galleryItemDescTextColor" value="#0000"/>
+        </div>
+    </div>
+    <h2>Action Button</h2>
+    <div class="ctrl-container-row indent">
+        <div class="ctrl-container-block">
+            <label>Background</label>
+            <input type="color" vff-style="galleryItemActionBackground" value="#3d93f6"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Text Color</label>
+            <input type="color" vff-style="galleryItemActionTextColor" value="#ffffff"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Hover Background</label>
+            <input type="color" vff-style="galleryItemActionHighlightBackground" value="#75b5ff"/>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Hover Text Color</label>
+            <input type="color" vff-style="galleryItemActionTextHighlightColor" value="#ffffff"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
