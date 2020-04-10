@@ -25,6 +25,11 @@
     --gallery-item-action-text-highlight-color:#ffffff;
     
     --animation-speed:1s;
+
+    --scroll-size:5px;
+    --scroll-background:#fff;
+    --scroll-handle-color:#ddd;
+    --scroll-handle-highlight-color:#777;
 }
 
 *{
@@ -277,6 +282,32 @@ body.right .gallery-toggle-off .close{
     height: 100%;
     position: absolute;
 }
+
+/* SCROLL BAR*/
+/* width */
+::-webkit-scrollbar {
+    width: var(--scroll-size);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--scroll-background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-handle-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-handle-highlight-color);
+}
+
+.vff-mobile::-webkit-scrollbar {
+    all:unset;
+}
+
 
 @media (orientation: landscape) {
     .vff-mobile .gallery{
