@@ -83,7 +83,15 @@
         </div>
     </div>
     <div class="ctrl-container-row indent">
-        <vff-checkbox vff-data="settings.rtl">Align to right</vff-checkbox>
+        <div class="ctrl-container-block">
+            <label>Display Settings</label>
+            <vff-checkbox vff-data="settings.rtl">Align to right</vff-checkbox>
+            <vff-checkbox vff-data="settings.horizontal">Horizontal scroll</vff-checkbox>
+        </div>
+        <div class="ctrl-container-block">
+            <label>Animation Speed</label>
+            <input type="range" min="0" max="2" step="0.1" value="1" vff-style="animationSpeed" vff-suffix="s"/>
+        </div>
     </div>
     <h3>Toggle Button</h3>
     <div class="ctrl-container-row indent">
@@ -102,17 +110,20 @@
     </div>
     <h2>Gallery Item</h2>
     <div class="ctrl-container-row indent">
+        <vff-checkbox vff-data="settings.fullImg">Image Fill</vff-checkbox>
+    </div>
+    <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Background</label>
             <input type="color" vff-style="galleryItemBackground" value="#ffffff"/>
         </div>
         <div class="ctrl-container-block">
-            <label>Border Radius</label>
+            <label>Roundness</label>
             <input type="range" min="0" max="30" step="1" value="10" vff-style="galleryItemBorderRadius" vff-suffix="px"/>
         </div>
         <div class="ctrl-container-block">
             <label>Spacing</label>
-            <input type="range" min="5" max="50" step="1" value="10" vff-style="galleryItemSpacing" vff-suffix="px"/>
+            <input type="range" min="0" max="50" step="1" value="10" vff-style="galleryItemSpacing" vff-suffix="px"/>
         </div>
         <div class="ctrl-container-block">
             <label>Shadow</label>
