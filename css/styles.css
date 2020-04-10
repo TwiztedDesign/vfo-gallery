@@ -127,7 +127,6 @@ body.right .gallery-toggle-off .close{
     bottom: 0;
     font-size: 12px;
     transition: left var(--animation-speed) ease;
-    z-index:1;
 }
 
 .gallery.hide{
@@ -343,6 +342,10 @@ body.right .gallery-toggle-off .close{
 
     .vff-mobile .gallery.horizontal{
         height: 100%;
+    }
+
+    .vff-mobile .gallery .gallery-view{
+        padding:0 var(--gallery-padding);
     }
 
     .vff-mobile .gallery.horizontal .gallery-view{
