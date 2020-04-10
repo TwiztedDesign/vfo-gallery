@@ -235,6 +235,7 @@ body.right .gallery-toggle-off .close{
     padding: 5px 10px;
     font-size: 1em;
     color:var(--gallery-item-desc-text-color);
+    white-space: pre-line;
     z-index: 1;
 }
 
