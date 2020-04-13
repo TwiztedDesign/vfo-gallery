@@ -34,7 +34,8 @@
             <tbody>
             <tr ng-repeat="baseItem in baseItems track by $index">
                 <td>
-                    <input type="text" vff-data="baseItems[{{$index}}].img"  ng-model="baseItem.img"/>
+                    <!--<input type="text" vff-data="baseItems[{{$index}}].img"  ng-model="baseItem.img"/>-->
+                    <vff-image-browser vff-data="baseItems[{{$index}}].img"></vff-image-browser>
                 </td>
                 <td>
                     <input type="text" vff-data="baseItems[{{$index}}].title"  ng-model="baseItem.title"/>
