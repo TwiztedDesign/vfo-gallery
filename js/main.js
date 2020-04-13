@@ -18,30 +18,30 @@ angular.module('galleryApp',[])
         };
 
         $scope.data = [
-            {
-                title       : "Title",
-                subTitle    : "Sub Title",
-                desc        : "Description",
-                action      : "Click to buy",
-                actionLink  : "https://www.google.com",
-                img         : "img/item1.jpg"
-            },
-            {
-                title       : "Title",
-                subTitle    : "Sub Title",
-                desc        : "Description",
-                action      : "Click to buy",
-                actionLink  : "https://www.google.com",
-                img         : "img/item1.jpg"
-            },
-            {
-                title       : "Title",
-                subTitle    : "Sub Title",
-                desc        : "Description",
-                action      : "Click to buy",
-                actionLink  : "https://www.google.com",
-                img         : "img/item1.jpg"
-            }
+            // {
+            //     title       : "Title",
+            //     subTitle    : "Sub Title",
+            //     desc        : "Description",
+            //     action      : "Click to buy",
+            //     actionLink  : "https://www.google.com",
+            //     img         : "img/item1.jpg"
+            // },
+            // {
+            //     title       : "Title",
+            //     subTitle    : "Sub Title",
+            //     desc        : "Description",
+            //     action      : "Click to buy",
+            //     actionLink  : "https://www.google.com",
+            //     img         : "img/item1.jpg"
+            // },
+            // {
+            //     title       : "Title",
+            //     subTitle    : "Sub Title",
+            //     desc        : "Description",
+            //     action      : "Click to buy",
+            //     actionLink  : "https://www.google.com",
+            //     img         : "img/item1.jpg"
+            // }
         ];
 
         vff.onController('baseItems', e => {

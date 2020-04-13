@@ -213,7 +213,7 @@ body.right .gallery-toggle-off .close{
     top:0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, var(--gallery-item-background) 0%, transparent 15%, transparent 75%, var(--gallery-item-background) 100%);
+    background: linear-gradient(180deg, var(--gallery-item-background) 0%, transparent 20%, var(--gallery-item-background) 100%);
 }
 
 .gallery .gallery-view .gallery-item-wrap .gallery-item .gallery-item-title{
