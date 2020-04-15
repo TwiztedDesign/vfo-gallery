@@ -1,0 +1,24 @@
+.pickr .pcr-button {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+}
+
+.pickr .pcr-button::after{
+    border-radius: 0;
+}
+
+.pickr .pcr-button::before{
+    border-radius: 0;
+}
+
+.pcr-app{
+    border:1px solid rgba(255, 255, 255, 0.1);
+    background: #1a1f26;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.pcr-app .pcr-palette{
+    border-radius: 0 !important;
+}

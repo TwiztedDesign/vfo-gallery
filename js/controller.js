@@ -2,33 +2,59 @@ angular.module('app',[])
 
     .controller('ctrl', ['$scope', function($scope) {
 
-        let baseItem =
-            {
-                title       : "",
-                subTitle    : "",
-                desc        : "",
-                action      : "",
-                actionLink  : "",
-                img         : ""
+            let baseItem =
+                {
+                    title       : "",
+                    subTitle    : "",
+                    desc        : "",
+                    action      : "",
+                    actionLink  : "",
+                    img         : ""
+                };
+
+            $scope.baseItems = [];
+
+            $scope.addBaseItem = function(){
+                let b = Object.assign({},baseItem);
+                $scope.baseItems.push(b);
             };
 
-        $scope.baseItems = [];
+            $scope.removeBaseItem = function(index){
+                $scope.baseItems.splice(index, 1);
+                if(!$scope.baseItems.length){
+                    $scope.addBaseItem();
+                }
+            };
 
-        $scope.addBaseItem = function(){
-            let b = Object.assign({},baseItem);
-            $scope.baseItems.push(b);
-        };
+            vff.onController('baseItems',(e)=>{
+                $scope.baseItems = e.data;
+            $scope.$apply();
+        }, {changeOnly : false})
 
-        $scope.removeBaseItem = function(index){
-            $scope.baseItems.splice(index, 1);
-            if(!$scope.baseItems.length){
-                $scope.addBaseItem();
-            }
-        };
+        setTimeout(function(){
+            const pickr = Pickr.create({
+                el: '.color-picker',
+                theme: 'nano', // or 'monolith', or
+                comparison: false,
+                components: {
+                    // Main components
+                    preview: true,
+                    opacity: true,
+                    hue: true,
 
-        vff.onController('baseItems',(e)=>{
-            $scope.baseItems = e.data;
-        $scope.$apply();
-    }, {changeOnly : false})
+                    // Input / output Options
+                    interaction: {
+                        hex: false,
+                        rgba: false,
+                        hsla: false,
+                        hsva: false,
+                        cmyk: false,
+                        input: true,
+                        clear: false,
+                        save: false
+                    }
+                }
+            });
+        },500);
 
     }]);

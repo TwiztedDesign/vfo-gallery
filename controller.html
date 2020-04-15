@@ -11,6 +11,16 @@
     <script type="module" src="https://unpkg.com/vff-controllers/dist/vff-controller/vff-controller.esm.js"></script>
     <script src="js/controller.js"></script>
     <script nomodule="" src="https://unpkg.com/vff-controllers/dist/vff-controller/vff-controller.js"></script>
+
+    <!-- COLOR PICKER -->
+    <!-- One of the following themes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"/> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
+    <link rel="stylesheet" href="css/color-picker.css"/>
+    <!-- Modern or es5 bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
 </head>
 <body vff-controller ng-app="app" ng-controller="ctrl">
 <vff-tabs default="style">
@@ -68,7 +78,8 @@
     <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Background</label>
-            <input type="color" vff-style="galleryBackground" value="#eeeeee"/>
+            <!--<input type="color" vff-style="galleryBackground" value="#eeeeee"/>-->
+            <div class="color-picker"></div>
         </div>
         <div class="ctrl-container-block">
             <label>Padding</label>
