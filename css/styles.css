@@ -355,20 +355,31 @@ body.right .gallery-toggle-off .close{
     .vff-mobile .gallery{
         width: 100vw;
         border-radius: 0;
-        top:56.25vw;
+        top:inherit;
+        height: calc(100vh - 56.25vw);
     }
 
-    .vff-mobile .gallery-toggle-off{
-        display: none;
+    .vff-mobile .gallery.vertical-anim{
+        transition: bottom var(--animation-speed) ease;
+        border-radius: 10px 10px 0 0;
     }
 
-    .vff-mobile .gallery-toggle-on{
-        display: none;
-    }
+    /*.vff-mobile .gallery-toggle-off{*/
+        /*display: none;*/
+    /*}*/
+
+    /*.vff-mobile .gallery-toggle-on{*/
+        /*display: none;*/
+    /*}*/
 
     .vff-mobile .gallery.hide{
         transition: none;
         left:0;
+    }
+
+    .vff-mobile .gallery.vertical-anim.hide{
+        bottom:calc(56.25vw - 100vh);
+        transition: bottom var(--animation-speed) ease;
     }
 
     .vff-mobile .gallery.horizontal{
