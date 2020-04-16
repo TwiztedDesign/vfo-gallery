@@ -31,30 +31,32 @@ angular.module('app',[])
             $scope.$apply();
         }, {changeOnly : false})
 
-        setTimeout(function(){
-            const pickr = Pickr.create({
-                el: '.color-picker',
-                theme: 'nano', // or 'monolith', or
-                comparison: false,
-                components: {
-                    // Main components
-                    preview: true,
-                    opacity: true,
-                    hue: true,
 
-                    // Input / output Options
-                    interaction: {
-                        hex: false,
-                        rgba: false,
-                        hsla: false,
-                        hsva: false,
-                        cmyk: false,
-                        input: true,
-                        clear: false,
-                        save: false
-                    }
-                }
-            });
-        },500);
+
+        // setTimeout(function(){
+        //     const pickr = Pickr.create({
+        //         el: '.color-picker',
+        //         theme: 'nano', // or 'monolith', or
+        //         comparison: false,
+        //         components: {
+        //             // Main components
+        //             preview: true,
+        //             opacity: true,
+        //             hue: true,
+        //
+        //             // Input / output Options
+        //             interaction: {
+        //                 hex: false,
+        //                 rgba: false,
+        //                 hsla: false,
+        //                 hsva: false,
+        //                 cmyk: false,
+        //                 input: true,
+        //                 clear: false,
+        //                 save: false
+        //             }
+        //         }
+        //     });
+        // },500);
 
     }]);
