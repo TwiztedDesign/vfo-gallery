@@ -38,16 +38,41 @@ angular.module('app')
                     }
                 });
 
+
+                function debounce(func, wait, immediate) {
+                    let timeout;
+
+                    return function executedFunction() {
+                        let context = this;
+                        let args = arguments;
+
+                        let later = function() {
+                            timeout = null;
+                            if (!immediate) func.apply(context, args);
+                        };
+
+                        let callNow = immediate && !timeout;
+
+                        clearTimeout(timeout);
+
+                        timeout = setTimeout(later, wait);
+
+                        if (callNow) func.apply(context, args);
+                    };
+                }
+
                 const el = pickr.getRoot().root;
 
                 if(attrs.vffStyle) el.setAttribute('vff-style', attrs.vffStyle);
                 if(attrs.vffData) el.setAttribute('vff-data', attrs.vffData);
 
+                let update = debounce(vff.controller.update, 400);
                 pickr.on('change', (color, instance) => {
 
                     if(instance._lastColor.toHEXA().toString() !== color.toHEXA().toString()){
                         // console.log('change', color, instance);
-                        vff.controller.update();
+                        update();
+                        // vff.controller.update();
                     }
                 });
 
