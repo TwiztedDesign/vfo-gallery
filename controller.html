@@ -34,23 +34,22 @@
             <tbody>
             <tr ng-repeat="baseItem in baseItems track by $index">
                 <td>
-                    <!--<input type="text" vff-data="baseItems[{{$index}}].img"  ng-model="baseItem.img"/>-->
-                    <vff-image-browser vff-data="baseItems[{{$index}}].img"></vff-image-browser>
+                    <vff-image-browser vff-data="baseItems.{{$index}}.img"></vff-image-browser>
                 </td>
                 <td>
-                    <input type="text" vff-data="baseItems[{{$index}}].title"  ng-model="baseItem.title"/>
+                    <vff-text vff-data="baseItems.{{$index}}.title"  ng-model="baseItem.title"></vff-text>
                 </td>
                 <td>
-                    <input type="text" vff-data="baseItems[{{$index}}].subTitle"  ng-model="baseItem.subTitle"/>
+                    <vff-text vff-data="baseItems.{{$index}}.subTitle"  ng-model="baseItem.subTitle"></vff-text>
                 </td>
                 <td>
-                    <textarea vff-data="baseItems[{{$index}}].desc" ng-model="baseItem.desc"></textarea>
+                    <vff-text multiline vff-data="baseItems.{{$index}}.desc" ng-model="baseItem.desc"></vff-text>
                 </td>
                 <td>
-                    <input type="text" vff-data="baseItems[{{$index}}].action"  ng-model="baseItem.action"/>
+                    <vff-text vff-data="baseItems.{{$index}}.action"  ng-model="baseItem.action"></vff-text>
                 </td>
                 <td>
-                    <input type="text" vff-data="baseItems[{{$index}}].actionLink"  ng-model="baseItem.actionLink"/>
+                    <vff-text vff-data="baseItems.{{$index}}.actionLink"  ng-model="baseItem.actionLink"></vff-text>
                 </td>
                 <td style="text-align:center; background:transparent;">
                     <a class="table-action delete-row" ng-click="removeBaseItem($index)"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -68,19 +67,19 @@
     <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Background</label>
-            <input type="color" vff-style="galleryBackground" value="#eeeeee"/>
+            <vff-color-picker vff-style="galleryBackground" value="#eeeeee"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Padding</label>
-            <input type="range" min="0" max="50" step="1" value="10" vff-style="galleryPadding" vff-suffix="px"/>
+            <vff-range min="0" max="50" step="1" value="10" vff-style="galleryPadding" vff-suffix="px"></vff-range>
         </div>
         <div class="ctrl-container-block">
             <label>Mobile Size</label>
-            <input type="range" min="0" max="80" step="1" value="50" vff-style="galleryMobileSize" vff-suffix="%"/>
+            <vff-range min="0" max="80" step="1" value="50" vff-style="galleryMobileSize" vff-suffix="%"></vff-range>
         </div>
         <div class="ctrl-container-block">
             <label>Desktop Size</label>
-            <input type="range" min="0" max="80" step="1" value="30" vff-style="galleryDesktopSize" vff-suffix="%"/>
+            <vff-range min="0" max="80" step="1" value="30" vff-style="galleryDesktopSize" vff-suffix="%"></vff-range>
         </div>
     </div>
     <div class="ctrl-container-row indent">
@@ -92,22 +91,22 @@
         </div>
         <div class="ctrl-container-block">
             <label>Animation Speed</label>
-            <input type="range" min="0" max="2" step="0.1" value="1" vff-style="animationSpeed" vff-suffix="s"/>
+            <vff-range min="0" max="2" step="0.1" value="1" vff-style="animationSpeed" vff-suffix="s"></vff-range>
         </div>
     </div>
     <h3>Toggle Button</h3>
     <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Background</label>
-            <input type="color" vff-style="galleryToggleBackground" value="#ffffff"/>
+            <vff-color-picker vff-style="galleryToggleBackground" value="#ffffff"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Background</label>
-            <input type="color" vff-style="galleryToggleTextColor" value="#000000"/>
+            <vff-color-picker vff-style="galleryToggleTextColor" value="#000000"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Toggle Text</label>
-            <input type="text" vff-data="settings.toggleText" value="Show Gallery"/>
+            <vff-text vff-data="settings.toggleText" value="Show Gallery"></vff-text>
         </div>
     </div>
     <h2>Gallery Item</h2>
@@ -117,75 +116,75 @@
     <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Background</label>
-            <input type="color" vff-style="galleryItemBackground" value="#ffffff"/>
+            <vff-color-picker vff-style="galleryItemBackground" value="#ffffff"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Roundness</label>
-            <input type="range" min="0" max="30" step="1" value="10" vff-style="galleryItemBorderRadius" vff-suffix="px"/>
+            <vff-range min="0" max="30" step="1" value="10" vff-style="galleryItemBorderRadius" vff-suffix="px"></vff-range>
         </div>
         <div class="ctrl-container-block">
             <label>Spacing</label>
-            <input type="range" min="0" max="50" step="1" value="10" vff-style="galleryItemSpacing" vff-suffix="px"/>
+            <vff-range min="0" max="50" step="1" value="10" vff-style="galleryItemSpacing" vff-suffix="px"></vff-range>
         </div>
         <div class="ctrl-container-block">
             <label>Shadow</label>
-            <input type="range" min="0" max="1" step="0.01" value="0.3" vff-style="galleryItemShadowOpacity"/>
+            <vff-range min="0" max="1" step="0.01" value="0.3" vff-style="galleryItemShadowOpacity"></vff-range>
         </div>
     </div>
     <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Title Background</label>
-            <input type="color" vff-style="galleryItemTitleBackground" value="#ffffff"/>
+            <vff-color-picker vff-style="galleryItemTitleBackground" value="#ffffff"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Title Color</label>
-            <input type="color" vff-style="galleryItemTitleTextColor" value="#0000"/>
+            <vff-color-picker vff-style="galleryItemTitleTextColor" value="#0000"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Sub Title Color</label>
-            <input type="color" vff-style="galleryItemSubtitleTextColor" value="#0000"/>
+            <vff-color-picker vff-style="galleryItemSubtitleTextColor" value="#0000"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Description Color</label>
-            <input type="color" vff-style="galleryItemDescTextColor" value="#0000"/>
+            <vff-color-picker vff-style="galleryItemDescTextColor" value="#0000"></vff-color-picker>
         </div>
     </div>
     <h2>Action Button</h2>
     <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Background</label>
-            <input type="color" vff-style="galleryItemActionBackground" value="#3d93f6"/>
+            <vff-color-picker vff-style="galleryItemActionBackground" value="#3d93f6"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Text Color</label>
-            <input type="color" vff-style="galleryItemActionTextColor" value="#ffffff"/>
+            <vff-color-picker vff-style="galleryItemActionTextColor" value="#ffffff"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Hover Background</label>
-            <input type="color" vff-style="galleryItemActionHighlightBackground" value="#75b5ff"/>
+            <vff-color-picker vff-style="galleryItemActionHighlightBackground" value="#75b5ff"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Hover Text Color</label>
-            <input type="color" vff-style="galleryItemActionTextHighlightColor" value="#ffffff"/>
+            <vff-color-picker vff-style="galleryItemActionTextHighlightColor" value="#ffffff"></vff-color-picker>
         </div>
     </div>
     <h2>Scroll</h2>
     <div class="ctrl-container-row indent">
         <div class="ctrl-container-block">
             <label>Background</label>
-            <input type="color" vff-style="scrollBackground" value="#ffffff"/>
+            <vff-color-picker vff-style="scrollBackground" value="#ffffff"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Text Color</label>
-            <input type="color" vff-style="scrollHandleColor" value="#dddddd"/>
+            <vff-color-picker vff-style="scrollHandleColor" value="#dddddd"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Hover Background</label>
-            <input type="color" vff-style="scrollHandleHighlightColor" value="#777777"/>
+            <vff-color-picker vff-style="scrollHandleHighlightColor" value="#777777"></vff-color-picker>
         </div>
         <div class="ctrl-container-block">
             <label>Size</label>
-            <input type="range" min="5" max="" step="1" value="5" vff-style="scrollSize" vff-suffix="px"/>
+            <vff-range min="5" max="" step="1" value="5" vff-style="scrollSize" vff-suffix="px"></vff-range>
         </div>
     </div>
 </div>
