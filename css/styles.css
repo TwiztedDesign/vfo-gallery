@@ -82,6 +82,9 @@ body.right .gallery-toggle-off .close{
     background-color: rgba(0,0,0,0.5);
     opacity: 0;
     transition: opacity var(--animation-speed) ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gallery-toggle-off .close{
@@ -92,6 +95,21 @@ body.right .gallery-toggle-off .close{
     font-size: 2vw;
     opacity: 0.5;
     user-select: none;
+}
+
+.gallery-toggle-off .gallery-toggle-off-action{
+    color:#fff;
+    position: absolute;
+    opacity: 0.65;
+    pointer-events: none;
+    font-size: 1.5vw;
+    left: inherit;
+    right: calc((100% - var(--gallery-desktop-size)) /2);
+}
+
+body.right .gallery-toggle-off .gallery-toggle-off-action{
+    right: inherit;
+    left: calc((100% - var(--gallery-desktop-size)) /2);
 }
 
 .gallery-toggle-off.darken{
@@ -349,6 +367,18 @@ body.right .gallery-toggle-off .close{
         height: 100%;
         padding: 0 calc(var(--gallery-item-spacing) /2);
     }
+
+    .vff-mobile .gallery-toggle-off .gallery-toggle-off-action{
+        font-size: 3vh;
+        left: inherit;
+        right: calc((100% - var(--gallery-mobile-size)) /2);
+    }
+
+    .vff-mobile.right .gallery-toggle-off .gallery-toggle-off-action{
+        font-size: 3vh;
+        right:inherit;
+        left: calc((100% - var(--gallery-mobile-size)) /2);
+    }
 }
 
 @media (orientation: portrait) {
@@ -359,25 +389,36 @@ body.right .gallery-toggle-off .close{
         height: calc(100vh - 56.25vw);
     }
 
-    .vff-mobile .gallery.vertical-anim{
+    .vff-mobile.vertical-anim .gallery{
         transition: bottom var(--animation-speed) ease;
         border-radius: 10px 10px 0 0;
     }
 
-    /*.vff-mobile .gallery-toggle-off{*/
-        /*display: none;*/
-    /*}*/
+    .vff-mobile.vertical-anim .gallery .gallery-item-wrap .gallery-item{
+        padding-bottom: 25px;
+    }
 
-    /*.vff-mobile .gallery-toggle-on{*/
-        /*display: none;*/
-    /*}*/
+    .vff-mobile .gallery-toggle-off .gallery-toggle-off-action{
+        font-size: 3vw;
+        top: calc(56.25vw /2);
+        left:inherit;
+        right:inherit;
+    }
+
+    .vff-mobile:not(.vertical-anim) .gallery-toggle-on{
+        display: none;
+    }
+
+    .vff-mobile:not(.vertical-anim) .gallery-toggle-off {
+        display: none;
+    }
 
     .vff-mobile .gallery.hide{
         transition: none;
         left:0;
     }
 
-    .vff-mobile .gallery.vertical-anim.hide{
+    .vff-mobile.vertical-anim .gallery.hide{
         bottom:calc(56.25vw - 100vh);
         transition: bottom var(--animation-speed) ease;
     }
