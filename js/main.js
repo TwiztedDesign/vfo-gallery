@@ -14,8 +14,7 @@ angular.module('galleryApp',[])
             rtl         : true,
             toggleText  :"Show Gallery",
             horizontal  : false,
-            fullImg     : true,
-            verticalAnim: false
+            fullImg     : true
         };
 
         $scope.data = [
