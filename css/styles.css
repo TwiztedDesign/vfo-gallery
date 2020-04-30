@@ -66,8 +66,8 @@ body.right .gallery-toggle-on{
     left:inherit;
     right:0;
     border-radius: 5px 5px 0 0;
-    transform-origin: bottom right;
-    transform: translateY(-300%) rotate(-90deg);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(90deg);
 }
 
 body.right .gallery-toggle-off .close{
