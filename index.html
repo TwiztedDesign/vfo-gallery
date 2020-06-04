@@ -16,7 +16,9 @@
 </head>
 <body ng-app="galleryApp" ng-controller="galleryAppController" ng-class="{right:settings.rtl}">
 <div class="gallery-toggle-off" ng-class="{darken:galleryVisibility}" ng-click="hideGallery()">
-    <i class="fa fa-times close" aria-hidden="true"></i>
+    <div class="gallery-toggle-off-action">
+        <span>Tap to hide</span>
+    </div>
 </div>
 <div class="gallery-toggle-on" ng-click="showGallery()" ng-class="{hide:galleryVisibility}">{{settings.toggleText}}</div>
 <div class="gallery" ng-class="{hide: !galleryVisibility, horizontal: settings.horizontal}">
